@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @person.address.try(:city) %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @person.address.try(:state) %>
+</p>
+
+<p>
+  Pets:
+  <%= @person.pets.map(&:name).join(",") %>
+</p>
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
